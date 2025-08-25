@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(248, 25%, 98%);
+  --card: hsl(0, 0%, 10%);
+  --card-foreground: hsl(248, 25%, 98%);
+  --popover: hsl(0, 0%, 4%);
+  --popover-foreground: hsl(248, 25%, 98%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(248, 25%, 98%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --accent: hsl(0, 0%, 15%);
+  --accent-foreground: hsl(248, 25%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(240, 6%, 20%);
+  --input: hsl(240, 6%, 10%);
+  --ring: hsl(217, 91%, 60%);
+  --chart-1: hsl(217, 91%, 60%);
+  --chart-2: hsl(262, 83%, 58%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  
+  /* Custom portfolio colors */
+  --dark-primary: hsl(0, 0%, 4%);
+  --dark-secondary: hsl(0, 0%, 10%);
+  --dark-accent: hsl(215, 16%, 47%);
+  --blue-accent: hsl(217, 91%, 60%);
+  --purple-accent: hsl(262, 83%, 58%);
+  --text-primary: hsl(248, 25%, 98%);
+  --text-secondary: hsl(215, 20%, 65%);
+  
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-poppins: "Poppins", sans-serif;
+  --radius: 0.5rem;
+}
+
+.light {
+  --background: hsl(248, 25%, 98%);
+  --foreground: hsl(0, 0%, 4%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 4%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 4%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(0, 0%, 4%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(0, 0%, 4%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(217, 91%, 60%);
+  
+  /* Custom portfolio colors for light mode */
+  --dark-primary: hsl(248, 25%, 98%);
+  --dark-secondary: hsl(0, 0%, 100%);
+  --dark-accent: hsl(214, 32%, 91%);
+  --text-primary: hsl(0, 0%, 4%);
+  --text-secondary: hsl(215, 16%, 47%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-accent to-purple-accent bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .card-hover:hover {
+    @apply transform -translate-y-2 shadow-2xl;
+  }
+  
+  .skill-bar {
+    @apply transition-all duration-[2s] ease-in-out;
+  }
+}
+
+@layer utilities {
+  .bg-dark-primary {
+    background-color: var(--dark-primary);
+  }
+  
+  .bg-dark-secondary {
+    background-color: var(--dark-secondary);
+  }
+  
+  .bg-dark-accent {
+    background-color: var(--dark-accent);
+  }
+  
+  .bg-blue-accent {
+    background-color: var(--blue-accent);
+  }
+  
+  .bg-purple-accent {
+    background-color: var(--purple-accent);
+  }
+  
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-blue-accent {
+    color: var(--blue-accent);
+  }
+  
+  .text-purple-accent {
+    color: var(--purple-accent);
+  }
+  
+  .border-dark-accent {
+    border-color: var(--dark-accent);
+  }
+  
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(217, 91%, 60%, 0.3); }
+  to { box-shadow: 0 0 30px hsl(217, 91%, 60%, 0.6); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
