@@ -32,8 +32,8 @@ export function HeroSection() {
             AI/ML Engineer & Computer Science Graduate
           </h2>
           <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-            Passionate about leveraging artificial intelligence and machine learning to solve real-world problems. 
-            Currently completing my dual degree at IIT Bhubaneswar with expertise in deep learning, 
+            A computer science graduate from IIT Bhubaneswar passionate about AI/ML. 
+            Leveraging artificial intelligence and machine learning to solve real-world problems with expertise in deep learning, 
             natural language processing, and bias mitigation in AI systems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">

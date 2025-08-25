@@ -35,7 +35,7 @@ export function AboutSection() {
                   <h4 className="text-xl font-semibold mb-2 text-text-primary">B.Tech + M.Tech Computer Science</h4>
                   <p className="text-text-secondary mb-1">Indian Institute of Technology, Bhubaneswar</p>
                   <p className="text-text-secondary mb-2">Nov 2020 - May 2025 | CGPA: 8.17</p>
-                  <p className="text-sm text-text-secondary">Specializing in Machine Learning, Deep Learning, and Natural Language Processing</p>
+                  <p className="text-sm text-text-secondary">Specialized in Machine Learning, Deep Learning, and Natural Language Processing</p>
                 </div>
                 <div className="border-l-4 border-purple-accent pl-6">
                   <h4 className="text-xl font-semibold mb-2 text-text-primary">Academic Excellence</h4>

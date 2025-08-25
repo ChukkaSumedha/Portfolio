@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import resumePdf from "@assets/RESUME_SAI SATYA SUMEDHA CHUKKA_1756099940344.pdf";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -49,10 +50,16 @@ export function ContactSection() {
   };
 
   const handleDownloadResume = () => {
-    // This would typically download the actual resume file
+    const link = document.createElement('a');
+    link.href = resumePdf;
+    link.download = 'Sumedha_Chukka_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     toast({
-      title: "Resume download",
-      description: "Resume download feature would be implemented here.",
+      title: "Resume downloaded!",
+      description: "Thank you for downloading my resume.",
     });
   };
 
