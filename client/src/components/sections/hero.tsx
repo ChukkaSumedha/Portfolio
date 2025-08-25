@@ -29,7 +29,7 @@ export function HeroSection() {
             <span className="gradient-text">Sumedha Chukka</span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-poppins font-medium text-text-secondary mb-6">
-            AI/ML Engineer & Computer Science Graduate
+            AI/ML Engineer/Data Analyst
           </h2>
           <p className="text-lg text-text-secondary mb-8 leading-relaxed">
             A computer science graduate from IIT Bhubaneswar passionate about AI/ML. 
