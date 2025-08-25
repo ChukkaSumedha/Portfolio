@@ -6,6 +6,24 @@ import { FlaskConical, GraduationCap, Camera, Brain, Cog, TrendingUp } from "luc
 export function ExperienceSection() {
   const experiences = [
     {
+      title: "AI/ML Intern (Short term Project)",
+      company: "Ruvision Ventures Pvt Ltd",
+      period: "July 2024 - Aug 2024",
+      icon: <Brain className="text-white text-xl" />,
+      color: "purple" as const,
+      responsibilities: [
+        "Worked on Climate AI Prithvi-WxC Model, changed the architecture to work with ERA5 data and trained the model.",
+        "Developed a PoC for a Use case Man made change detections and implemented demo app using n8n.",
+        "Applied machine learning techniques to climate data analysis and environmental monitoring solutions."
+      ],
+      technologies: ["Climate AI", "Prithvi-WxC Model", "ERA5 Data", "n8n", "Change Detection"],
+      highlights: [
+        { icon: Brain, text: "Climate AI model architecture modification" },
+        { icon: Cog, text: "PoC development for change detection" },
+        { icon: TrendingUp, text: "Demo app implementation with n8n" }
+      ]
+    },
+    {
       title: "Research Intern",
       company: "AHRC",
       period: "May 2024 - July 2024",
