@@ -1,58 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Code, Bot, Globe, BarChart3, Database, Settings } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-
-interface SkillBarProps {
-  skill: string;
-  percentage: number;
-  color: "blue" | "purple";
-}
-
-function SkillBar({ skill, percentage, color }: SkillBarProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  const colorClass = color === "blue" ? "bg-blue-accent" : "bg-purple-accent";
-
-  return (
-    <div ref={ref}>
-      <div className="flex justify-between mb-2">
-        <span className="font-mono text-sm text-text-primary">{skill}</span>
-        <span className="text-text-secondary text-sm">{percentage}%</span>
-      </div>
-      <div className="w-full bg-dark-accent rounded-full h-2">
-        <motion.div
-          className={`h-2 rounded-full ${colorClass}`}
-          initial={{ width: 0 }}
-          animate={{ width: isVisible ? `${percentage}%` : 0 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export function SkillsSection() {
   const skillCategories = [
@@ -60,65 +9,37 @@ export function SkillsSection() {
       title: "Programming Languages",
       icon: <Code className="text-white text-xl" />,
       color: "blue" as const,
-      skills: [
-        { name: "Python", percentage: 95 },
-        { name: "C++", percentage: 85 },
-        { name: "SQL", percentage: 80 },
-        { name: "C", percentage: 75 },
-      ],
+      skills: ["Python", "C++", "SQL", "C"],
     },
     {
       title: "ML/AI Frameworks",
       icon: <Bot className="text-white text-xl" />,
       color: "purple" as const,
-      skills: [
-        { name: "TensorFlow", percentage: 90 },
-        { name: "PyTorch", percentage: 85 },
-        { name: "Keras", percentage: 88 },
-        { name: "Scikit-learn", percentage: 85 },
-      ],
+      skills: ["TensorFlow", "PyTorch", "Keras", "Scikit-learn"],
     },
     {
       title: "Web Development",
       icon: <Globe className="text-white text-xl" />,
       color: "blue" as const,
-      skills: [
-        { name: "React JS", percentage: 80 },
-        { name: "Node JS", percentage: 75 },
-        { name: "Bootstrap", percentage: 85 },
-        { name: "API Development", percentage: 70 },
-      ],
+      skills: ["React JS", "Node JS", "Bootstrap", "API Development"],
     },
     {
       title: "Data Science",
       icon: <BarChart3 className="text-white text-xl" />,
       color: "purple" as const,
-      skills: [
-        { name: "NumPy", percentage: 90 },
-        { name: "Pandas", percentage: 88 },
-        { name: "Matplotlib", percentage: 85 },
-        { name: "Seaborn", percentage: 80 },
-      ],
+      skills: ["NumPy", "Pandas", "Matplotlib", "Seaborn"],
     },
     {
       title: "Databases",
       icon: <Database className="text-white text-xl" />,
       color: "blue" as const,
-      skills: [
-        { name: "MySQL", percentage: 85 },
-        { name: "MongoDB", percentage: 75 },
-      ],
+      skills: ["MySQL", "MongoDB"],
     },
     {
       title: "Tools & Platforms",
       icon: <Settings className="text-white text-xl" />,
       color: "purple" as const,
-      skills: [
-        { name: "Git/GitHub", percentage: 90 },
-        { name: "Google Colab", percentage: 95 },
-        { name: "Linux", percentage: 80 },
-        { name: "Kaggle", percentage: 85 },
-      ],
+      skills: ["Git/GitHub", "Google Colab", "Linux", "Kaggle"],
     },
   ];
 
@@ -156,15 +77,22 @@ export function SkillsSection() {
                     <h3 className="text-xl font-poppins font-semibold text-text-primary">{category.title}</h3>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  {category.skills.map((skill) => (
-                    <SkillBar
-                      key={skill.name}
-                      skill={skill.name}
-                      percentage={skill.percentage}
-                      color={category.color}
-                    />
-                  ))}
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <Badge
+                        key={skill}
+                        variant="secondary"
+                        className={`px-3 py-2 ${
+                          skillIndex % 2 === 0 
+                            ? "bg-blue-accent/20 text-blue-accent" 
+                            : "bg-purple-accent/20 text-purple-accent"
+                        } rounded-full text-sm font-mono`}
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
