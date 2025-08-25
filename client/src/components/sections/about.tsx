@@ -74,8 +74,8 @@ export function AboutSection() {
                 <div className="flex items-start space-x-3">
                   <Scale className="text-blue-accent mt-1 h-5 w-5" />
                   <div>
-                    <h4 className="font-semibold text-text-primary">AI Ethics & Bias Mitigation</h4>
-                    <p className="text-text-secondary text-sm">Developing fair and unbiased AI systems</p>
+                    <h4 className="font-semibold text-text-primary">Climate & Environmental AI</h4>
+                    <p className="text-text-secondary text-sm">Applying AI/ML for climate monitoring and environmental solutions</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
